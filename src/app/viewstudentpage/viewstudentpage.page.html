@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Students</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <ion-infinite-scroll>
+        <ion-list>
+            <ion-item *ngFor="let student of studentdata" (click)="showinfo(student)">
+                <ion-avatar slot="start">
+                    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+                </ion-avatar>
+                <ion-label>
+                    <h3>{{student.fname +" "+student.lname}}</h3>
+                    <p>{{student.id}}</p>
+                </ion-label>
+            </ion-item>
+        </ion-list>
+    </ion-infinite-scroll>
+</ion-content>

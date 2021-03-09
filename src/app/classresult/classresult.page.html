@@ -1,0 +1,69 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>classresult</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list id="list">
+        <ion-item>
+            <ion-avatar slot="start">
+                <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+            </ion-avatar>
+            <ion-label>
+                <h3>{{result?.cname}}</h3>
+            </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>
+                <strong>Subjects</strong>
+            </ion-label>
+            <ion-label class="ion-text-end" slot="end">
+                <strong>Marks</strong>
+            </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>
+                <h3>English</h3>
+            </ion-label>
+            <ion-note slot="end" color="tertiary">
+                <span>{{result?.cengobtain}}</span> / <span>{{result?.cengoutof}}</span>
+            </ion-note>
+        </ion-item>
+        <ion-item>
+            <ion-label>
+                <h3>Maths</h3>
+            </ion-label>
+            <ion-note slot="end" color="tertiary">
+                <span>{{result?.cmathsobtain}}</span> / <span>{{result?.cmathsoutof}}</span>
+            </ion-note>
+        </ion-item>
+        <ion-item>
+            <ion-label>
+                <h3>Physics</h3>
+            </ion-label>
+            <ion-note slot="end" color="tertiary">
+                <span>{{result?.cphyobtain}}</span> / <span>{{result?.cphyoutof}}</span>
+            </ion-note>
+        </ion-item>
+        <ion-item>
+            <ion-label>
+                <h3>Chemistry</h3>
+            </ion-label>
+            <ion-note slot="end" color="tertiary">
+                <span>{{result?.cchemobtain}}</span> / <span>{{result?.cchemoutof}}</span>
+            </ion-note>
+        </ion-item>
+        <ion-item>
+            <ion-label>
+                <h3>Biology</h3>
+            </ion-label>
+            <ion-note slot="end" color="tertiary">
+                <span>{{result?.cbioobtain}}</span> / <span>{{result?.cbiooutof}}</span>
+            </ion-note>
+        </ion-item>
+    </ion-list>
+    <br>
+    <ion-button id="btn" mode="ios" color="tertiary" expand="full" (click)="print()">Download & Print Marksheet
+    </ion-button>
+</ion-content>

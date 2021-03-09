@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>studentinfoview</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label>
+            <p>Name:</p>
+            <h3>{{info.fname +" "+info.lname}}</h3>
+        </ion-label>
+    </ion-item>
+    <ion-item>
+        <ion-label>
+            <p>Student Id:</p>
+            <h3>{{info.id}}</h3>
+        </ion-label>
+    </ion-item>
+    <ion-item>
+        <ion-label>
+            <p>Roll No.:</p>
+            <h3>{{info.roll}}</h3>
+        </ion-label>
+    </ion-item>
+    <ion-item>
+        <ion-label>
+            <p>Batch:</p>
+            <h3>{{info.batch}}</h3>
+        </ion-label>
+    </ion-item>
+    <ion-item>
+        <ion-label>
+            <p>Phone No.:</p>
+            <h3>{{info.phone}}</h3>
+        </ion-label>
+    </ion-item>
+    <ion-item>
+        <ion-label>
+            <p>Email Id:</p>
+            <h3>{{info.email}}</h3>
+        </ion-label>
+    </ion-item>
+    <ion-button mode="ios" color="tertiary" expand="full" (click)="showresult()">Student's Marksheet</ion-button>
+</ion-content>

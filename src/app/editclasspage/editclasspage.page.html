@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>editclasspge</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <ion-infinite-scroll>
+        <ion-list>
+            <ion-item-sliding *ngFor="let class of classdata">
+                <ion-item (click)="editinfo(class)">
+                    <ion-avatar slot="start">
+                        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+                    </ion-avatar>
+                    <ion-label>
+                        <h3>{{class.cname}}</h3>
+                    </ion-label>
+                </ion-item>
+                <ion-item-options side="start">
+                    <button ion-button color="tertiary" (click)="delete(class)">Delete</button>
+                </ion-item-options>
+                <ion-item-options side="end">
+                    <button ion-button color="tertiary" (click)="delete(class)">Delete</button>
+                </ion-item-options>
+            </ion-item-sliding>
+        </ion-list>
+    </ion-infinite-scroll>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="addclass()">
+        <ion-fab-button>
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+</ion-content>

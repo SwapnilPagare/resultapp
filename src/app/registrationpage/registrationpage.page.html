@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Register</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form>
+        <ion-item>
+            <ion-label position="floating">First Name</ion-label>
+            <ion-input name="fname" [ngModelOptions]="{standalone: true}" [(ngModel)]="fname" type="text" required>
+            </ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Last Name</ion-label>
+            <ion-input name="lname" [ngModelOptions]="{standalone: true}" [(ngModel)]="lname" type="text" required>
+            </ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Student Id</ion-label>
+            <ion-input name="id" [ngModelOptions]="{standalone: true}" [(ngModel)]="id" type="text" required></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Roll Number</ion-label>
+            <ion-input name="roll" [ngModelOptions]="{standalone: true}" [(ngModel)]="roll" type="text" required></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Batch</ion-label>
+            <ion-select name="batch" [ngModelOptions]="{standalone: true}" [(ngModel)]="batch" placeholder="Select">
+                <ion-select-option value="A">A</ion-select-option>
+                <ion-select-option value="B">B</ion-select-option>
+                <ion-select-option value="C">C</ion-select-option>
+                <ion-select-option value="D">D</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Phone Number</ion-label>
+            <ion-input name="phone" [ngModelOptions]="{standalone: true}" [(ngModel)]="phone" type="text" required>
+            </ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Email Id</ion-label>
+            <ion-input name="email" [ngModelOptions]="{standalone: true}" [(ngModel)]="email" type="email" required>
+            </ion-input>
+        </ion-item>
+        <ion-button type="submit" color="tertiary" expand="full" (click)="submit()">Submit</ion-button>
+    </form>
+</ion-content>

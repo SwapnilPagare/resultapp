@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>addmarksstudent</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form>
+        <ion-item>
+            <ion-label position="floating">Marks Obtained</ion-label>
+            <ion-input name="obtain" [ngModelOptions]="{standalone: true}" [(ngModel)]="obtain" type="text" required>
+            </ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Out Of Marks</ion-label>
+            <ion-input name="outof" [ngModelOptions]="{standalone: true}" [(ngModel)]="outof" type="text" required>
+            </ion-input>
+        </ion-item>
+        <ion-button type="submit" color="tertiary" expand="full" (click)="addmarks()">Submit</ion-button>
+    </form>
+</ion-content>
