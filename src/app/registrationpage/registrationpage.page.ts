@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { HttpClient} from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-registrationpage',
@@ -13,7 +14,7 @@ export class RegistrationpagePage implements OnInit {
 
   fname; lname; id; roll; batch; phone; email;
 
-  constructor(public formBuilder: FormBuilder, public http: HttpClient,private route: Router) { }
+  constructor(private alertController: AlertController,public formBuilder: FormBuilder, public http: HttpClient,private route: Router) { }
 
   submit() {
 
@@ -33,6 +34,7 @@ export class RegistrationpagePage implements OnInit {
       console.log(response);
       if (JSON.stringify(response) == '{"status":"Already Exists"}') {
         console.log('STUDENT ID ALREADY EXISTS');
+        this.presentAlert()
       }
       else if(JSON.stringify(response) == '{"status":"Proceed"}') {
         console.log("PROCEED");
@@ -41,6 +43,17 @@ export class RegistrationpagePage implements OnInit {
       }
     });
 
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Already Exists',
+      message: 'This Student Id Already Exists.',
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 
   ngOnInit() {
