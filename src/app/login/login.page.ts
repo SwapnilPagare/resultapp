@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginPage implements OnInit {
 
   fname; lname; id;
 
-  constructor(public http: HttpClient,private route: Router) { }
+  constructor(private alertController: AlertController,public http: HttpClient,private route: Router) { }
 
   login() {
     console.log(this.fname + "," + this.lname + "," + this.id);
@@ -27,6 +28,7 @@ export class LoginPage implements OnInit {
       console.log(response);
       if (JSON.stringify(response) == '{"status":"Not Exists"}') {
         console.log('STUDENT ID NOT EXISTS');
+        this.presentAlert();
       }
       else if(JSON.stringify(response) == '{"status":"Proceed"}') {
         console.log("PROCEED");
@@ -34,9 +36,18 @@ export class LoginPage implements OnInit {
       queryParams: login_data,});
       }
     });
+  }
 
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Not Found',
+      message: 'This Student Not Found.',
+      buttons: ['OK']
+    });
 
-}
+    await alert.present();
+  }
 
   ngOnInit() {
   }
